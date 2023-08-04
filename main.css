@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  
+}
+
+img {
+  display: block;
+  height: auto;
+}
+
+.site-main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.box {
+  display: flex;
+  gap: 90px;
+  margin-top: 20px;
+}
+.wrapper {
+  max-width: 475px;
+  width: 100%;
+  padding: 20px 28px 200px 30px;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(73,73,73,1) 70%, rgba(45,52,61,1) 78%);
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 1px 24px -1px rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(7.5px);
+  border-radius: 30px;
+  
+}
+
+.title {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.80);
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.list {
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.item {
+  display: flex;
+  gap: 15px;
+  border-bottom: 1px solid #ffd700;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.item:not(:last-child) {
+  padding-bottom: 5px;
+}
+
+.todo__number {
+  margin-right: 15px;
+  font-weight: 700;
+  color: #000;
+}
+
+.todo__name {
+  font-size: 20px;
+  color: #000;
+}
+
+.count-text {
+  
+  
+  width: 64px;
+  height: 35px;
+  margin-right: 14px;
+  flex-shrink: 0;
+  color: #000;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 3px;
+  border: none;
+}
+.text {
+  width: 192px;
+  height: 35px;
+  padding-left: 10px;
+  border: none;
+  border-radius: 3px;
+  margin: 0;
+  margin-right: 14px;
+  color: rgba(255, 255, 255, 0.90);
+  font-family: Calibri;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.count {
+  width: 30px;
+  height: 30px;
+  background-color: #ffd700;
+  margin: 0;
+  color: #000;
+  text-align: center;
+  font-family: Calibri;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 30px;
+  
+}
+
+.btn {
+  padding: 10px 40px;
+  background-color: transparent;
+  color: #ffd700;;
+  border: 2px solid var(--gold, #FFD700);
+  border-radius: 5px;
+}
