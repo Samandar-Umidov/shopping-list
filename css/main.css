@@ -19,6 +19,7 @@ body {
 img {
   display: block;
   height: auto;
+ 
 }
 
 .site-main {
@@ -49,7 +50,7 @@ img {
   border-radius: 30px;
   
 }
-
+ 
 .title {
   text-align: center;
   color: rgba(255, 255, 255, 0.80);
@@ -70,7 +71,7 @@ img {
 
 .item {
   display: flex;
-  gap: 15px;
+  justify-content: space-between;
   border-bottom: 1px solid #ffd700;
 }
 
@@ -94,8 +95,6 @@ img {
 }
 
 .count-text {
-  
-  
   width: 64px;
   height: 35px;
   margin-right: 14px;
@@ -118,7 +117,7 @@ img {
   border-radius: 3px;
   margin: 0;
   margin-right: 14px;
-  color: rgba(255, 255, 255, 0.90);
+  color: rgba(34, 8, 8, 0.9);
   font-family: Calibri;
   font-size: 20px;
   font-style: normal;
@@ -142,7 +141,47 @@ img {
 .btn {
   padding: 10px 40px;
   background-color: transparent;
-  color: #ffd700;;
+  color: #ffd700;
   border: 2px solid var(--gold, #FFD700);
   border-radius: 5px;
+}
+
+
+.form-search__input {
+  width: 192px;
+  height: 35px;
+  margin-top: 15px;
+  padding-left: 10px;
+  border: none;
+  border-radius: 3px;
+  margin: 0;
+  margin-right: 14px;
+  color: rgba(26, 25, 25, 0.9);
+  font-family: Calibri;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  
+}
+
+.form-search__btn {
+  width: 100px;
+  height: 35px;
+  margin-top: 15px;
+  margin-right: 14px;
+  flex-shrink: 0;
+  color: #000;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 3px;
+  border: none;
+}
+.button {
+  background-color: #ffd700;
+  border: none;
 }
