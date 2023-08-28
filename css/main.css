@@ -146,6 +146,14 @@ img {
   border-radius: 5px;
 }
 
+.record-btn {
+  padding: 5px 8px;
+  background-color: rgb(192, 192, 192);
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+}
+
 
 .form-search__input {
   width: 192px;

@@ -9,7 +9,7 @@ var elRecord = document.querySelector("#recordButton");
 const orders = JSON.parse(localStorage.getItem('orders') || "[]");
 renderOrders(orders);
 
-function addTodo(isSpeacking = false) {
+function addTodo() {
   const textValue = elInputText.value.trim();
   const inputValue = elInput.value.trim();
 
@@ -18,13 +18,6 @@ function addTodo(isSpeacking = false) {
       id: orders.length ? orders.length + 1 : 1,
       text: textValue,
       count: inputValue,
-    }
-
-    if(isSpeacking) {
-
-      const textinArray = textValue.split('')
-      let text = '';
-      let numbers = '';
     }
 
     orders.push(new_obj);
@@ -94,7 +87,7 @@ elList.addEventListener('click', function (evt) {
   }
 
   if (evt.target.matches('.edit-btn')) {
-    const edit_text = prompt("O'xgarishni kiriting");
+    const edit_text = prompt("O'zgarishni kiriting");
     const edit_count = prompt("Sanoqni kiriting");
 
     const editBtnId = evt.target.dataset.id;
@@ -128,33 +121,40 @@ elSearchForm.addEventListener("submit", function (evt) {
   renderOrders(filtered);
 });
 
-const recognition = new webkitSpeechRecognition();
-// recognition.lang = 'ru-RU';
-recognition.lang = 'uz-UZ';
 let isRecording = false;
+let recognition = null;
 
-recognition.onresult = function (event) {
-  const speechResult = event.results[0][0].transcript;
-  elInputText.value = speechResult;
-  addTodo(true);
-};
+function startRecognition() {
+  recognition = new webkitSpeechRecognition();
+  // recognition.lang = 'en-EN';
+  recognition.lang = 'uz-UZ';
 
-recognition.onstart = function () {
-  console.log('Speech recognition started');
-  elRecord.textContent = 'Stop';
-};
+  recognition.onresult = function (event) {
+    const speechResult = event.results[0][0].transcript;
+    elInputText.value = speechResult;
+  };
 
-recognition.onend = function () {
-  console.log('Speech recognition ended');
-  elRecord.textContent = 'Record';
-};
+  recognition.onstart = function () {
+    isRecording = true;
+    elRecord.textContent = 'Stop';
+  };
+
+  recognition.onend = function () {
+    isRecording = false;
+    elRecord.textContent = '🔴';
+  };
+
+  recognition.start();
+}
+
+function stopRecognition() {
+  recognition.stop();
+}
 
 elRecord.addEventListener('click', function () {
   if (!isRecording) {
-    recognition.start();
-    isRecording = true;
+    startRecognition();
   } else {
-    recognition.stop();
-    isRecording = false;
+    stopRecognition();
   }
 });
